@@ -3,7 +3,7 @@
     if (!isset($_SESSION)) {
         session_start();
     }
-    $_SESSION['usuario'] = 3;
+    $_SESSION['usuario'] = 1    ;
     
     function nova_data($data){
         $data = explode(" ", $data);
@@ -31,7 +31,7 @@
 <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 
 </head>
-<body>  
+<body><h1>Gênero</h1>   
 <div data-role="page">
 
     <?php
@@ -42,17 +42,7 @@
         }
     ?>
 	
-	</div>                                               
-	
-	<!--<div data-role="footer" data-position="fixed">
-		<div data-role="navbar">
-			<ul>
-				<li><a href="professores.html">Professores</a></li>
-				<li><a href="seletivo.html">Seletivo</a></li>
-				<li><a href="contato.html">Contato</a></li>
-			</ul>
-		</div>
-	</div>  -->
+</div>                                               
 </div>        
 </body>
 </html>
