@@ -48,4 +48,27 @@
             </li>");
     }
     ?>
-    </ul>    
+    </ul>
+</div>
+<div data-role="content" class="content_div">
+    <ul data-role="listview" data-inset="true">
+        <?php
+        $sql3 = "SELECT * from reserva where reserva.clicodigo = {$_SESSION['usuario']}";
+        $result3 = mysql_query($sql3);
+        while ($reserva = mysql_fetch_object($result3)){
+            $sql4 = "SELECT midcodigo from reserva_midia where reserva_midia.rescodigo = {$reserva->rescodigo}";
+            $result4 = mysql_query($sql4);
+            while ($reserva2 = mysql_fetch_object($result4)){
+                $sql5 = "select titulo from midia where midia.midcodigo = $reserva2->midcodigo";
+                $result5 = mysql_query($sql5);
+                $titulo  = mysql_fetch_object($result5);
+                echo "
+                    <li>
+                    <h3>Dia: ".formatar_data($reserva->datareserva)."</h3>
+                    <p>Titulo Reservado: {$titulo->titulo}</p>
+                    </li>";
+            }
+        }
+        ?>
+    </ul>
+</div>

@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO  `videolocadora`.`cliente` (
+`clicodigo` ,
+`nome` ,
+`cpf` ,
+`rg` ,
+`endereco` ,
+`telefone1` ,
+`telefone2` ,
+`senha`
+)
+VALUES (
+'1',  'ruan',  '18712618716',  '12873612873',  'mario dalponte',  '128716',  '182716',  '123456'
+), (
+'2',  'giorgio',  '129187198',  '1872618716',  'mario dalponte',  '128716',  '1827162',  '123'
+);
+-------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO  `videolocadora`.`genero` (
+`gencodigo` ,
+`nome`
+)
+VALUES (
+'1',  'Terror'
+), (
+'2',  'Aventura'
+), (
+'3',  'Romance'
+), (
+'4',  'Ficcao'
+), (
+'5',  'Infantil'
+), (
+'6',  'Romance'
+);
+-------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO `videolocadora`.`midia` (`midcodigo`, `titulo`, `descricao`, `tipo`, `claindicativa`, `genero_codigo`) VALUES ('3', 'Velozes e Furiosos 6', 'Desde que o golpe de Dom (Vin Diesel) e Brian (Paul Walker) no Rio de Janeiro deixou o grupo com US$100 milhões, os heróis se espalharam pelo globo. Mas a incapacidade de voltar para casa e viver em um lar tornou suas vidas incompletas. Enquanto isso, Jobbs (Dwayne Johnson) esteve perseguindo uma organização de mercenários sobre rodas, um grupo de homens cruéis divididos em 12 países, cujo mentor (Luke Evans) tem ajuda da destemida Letty (Michelle Rodriguez), a antiga namorada de Dom, que ele acreditava estar morta. A única maneira de parar este grupo de criminosos é superá-los nas ruas, por isso Hobbs pede a Dom para reunir um grupo de elite em Londres. A recompensa? Perdão a todos eles, para poderem voltar para as suas casas e tornarem suas famílias completas novamente.', '0', '14', '6'), ('4', 'Marley e Eu', 'John e Jenny eram jovens, apaixonados e estavam começando a sua vida juntos, sem grandes preocupações, até ao momento em que levaram para casa Marley, "um bola de pêlo amarelo em forma de cachorro", que, rapidamente, se transformou num labrador enorme e encorpado de 43 quilos.   Era um cão como não havia outro nas redondezas: arrombava portas, esgadanhava paredes, babava nas visitas, comia roupa do varal alheio e abocanhava tudo a que pudesse. De nada lhe valeram os tranqüilizantes receitados pelo veterinário, nem a "escola de boas maneiras", de onde, aliás, foi expulso. Mas, acima de tudo, Marley tinha um coração puro e a sua lealdade era incondicional. Imperdível.', '1', '10', '3');
