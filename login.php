@@ -1,20 +1,34 @@
 <?php 
-    include_once("conexao.php");
-    if (!isset($_SESSION)) {
-        session_start();
+    $usuarioValido = false;
+    if (isset($_GET['logout']) &&
+        !((isset($_POST['codigo']) && isset($_POST['senha'])) && 
+          (!empty($_POST['codigo']) && !empty($_POST['senha'])))) {
+        session_destroy();
     }
-    include_once("conexao.php");
+    if ((isset($_POST['codigo']) && isset($_POST['senha'])) && 
+        (!empty($_POST['codigo']) && !empty($_POST['senha']))) {
+        $sql = "select exists(
+                    select 1 
+                    from cliente
+                    where clicodigo = ". $_POST['codigo'] ."
+                    and senha = md5('". $_POST['senha'] ."')
+                ) as usuario";
+        $result = mysql_query($sql);
+        $usuario = mysql_fetch_object($result);  
+        if ($usuario->usuario) {
+            $usuarioValido = true;
+        }
+    } else if (isset($_POST['user'])){ 
+        echo "
+            <div class='alert alert-danger'>
+                <strong>Atenção!</strong> Todos os campos devem ser preenchidos.
+            </div>";
+    }
+    if ($usuarioValido)  {
+        $_SESSION['usuario'] = $_POST['codigo'];
+        include_once('acervo.php');
+    } else {
 ?>
-<html lang="pt-br">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-<title>VideoLocadora</title> 
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-</head> 
-
 <div data-role="header" class="header">                     
     <h1>VideoLocadora</h1>       
 </div>
@@ -30,3 +44,4 @@
         <input type="submit" value="Entrar">
     </form>
 </div>
+<?php } ?>

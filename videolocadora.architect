@@ -4,7 +4,16 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
-   <property key="Logical" value="Modelo de Dados" />
+   <property key="Connection Type" value="MySQL" />
+   <property key="Logical" value="(Banco de dados alvo)" />
+   <property key="JDBC URL" value="jdbc:mysql://localhost:3306/videolocadora" />
+   <property key="UID" value="root" />
+   <property key="PWD" value="123456" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
   </data-source>
   <data-source id="DS2">
    <property key="Connection Type" value="MySQL" />
@@ -124,7 +133,7 @@
     <column id="COL33" populated="true" UUID="b2bb882b-50d8-4b92-94b1-e29325b2f484" autoIncrement="false" autoIncrementSequenceName="cliente_telefone2_seq" defaultValue="" name="telefone2" nullable="0" physicalName="telefone2" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL34" populated="true" UUID="4274c12c-dd8f-47ee-bf3c-7f84d2d02353" autoIncrement="false" autoIncrementSequenceName="cliente_senha_seq" defaultValue="123456" name="senha" nullable="0" physicalName="senha" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL34" populated="true" UUID="4274c12c-dd8f-47ee-bf3c-7f84d2d02353" autoIncrement="false" autoIncrementSequenceName="cliente_senha_seq" defaultValue="e10adc3949ba59abbe56e057f20f883e" name="senha" nullable="0" physicalName="senha" precision="40" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -315,10 +324,10 @@
   <table id="TAB86" populated="true" UUID="13b45775-80b5-4fd1-a390-da43541d7747" name="locacao_reserva" objectType="TABLE" physicalName="locacao_reserva" >
    <remarks></remarks>
    <folder id="FOLTAB861" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL87" populated="true" UUID="1fe2f486-32ee-4012-ab6f-d11681d802d9" autoIncrement="false" autoIncrementSequenceName="reserva_rescodigo_seq" defaultValue="" name="rescodigo" nullable="0" physicalName="rescodigo" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL87" populated="true" UUID="1fe2f486-32ee-4012-ab6f-d11681d802d9" autoIncrement="false" autoIncrementSequenceName="reserva_rescodigo_seq_1_1" defaultValue="" name="rescodigo" nullable="0" physicalName="rescodigo" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
-    <column id="COL88" populated="true" UUID="e3335601-89db-4547-b399-f27919ef6169" autoIncrement="false" autoIncrementSequenceName="locacao_loccodigo_seq" defaultValue="" name="loccodigo" nullable="0" physicalName="loccodigo" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL88" populated="true" UUID="e3335601-89db-4547-b399-f27919ef6169" autoIncrement="false" autoIncrementSequenceName="locacao_loccodigo_seq_1" defaultValue="" name="loccodigo" nullable="0" physicalName="loccodigo" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
     </folder>

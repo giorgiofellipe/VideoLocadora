@@ -36,7 +36,7 @@
             <div data-role="collapsible"> 
                 <h3>
                     <input type="checkbox" name="filme[]" id="<?=$renovacao->midcodigo?>" value="<?=$renovacao->midcodigo.",".nova_data($renovacao->datadevolucao)?>">  
-                    <label for="<?=$renovacao->midcodigo?>"><?=$renovacao->titulo;?><p class="ui-li-aside"><strong><?=formatar_data($renovacao->datadevolucao)?></strong></p></label>
+                    <label for="<?=$renovacao->midcodigo?>"><?=utf8_encode($renovacao->titulo);?><p class="ui-li-aside"><strong><?=formatar_data($renovacao->datadevolucao)?></strong></p></label>
                 </h3>
                 <p>Nova Data de devolucao: <strong><?=nova_data($renovacao->datadevolucao)?></strong></p>
             </div>

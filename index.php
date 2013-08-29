@@ -3,7 +3,6 @@
     if (!isset($_SESSION)) {
         session_start();
     }
-    $_SESSION['usuario'] = 1    ;
     
     function nova_data($data){
         $data = explode(" ", $data);
@@ -35,10 +34,14 @@
 <div data-role="page">
 
     <?php
-        if (!isset($_GET["p"]) || empty($_GET["p"])) {
-            include_once("acervo.php"); 
+        if (!isset($_SESSION['usuario']) || empty($_SESSION['usuario'])) {
+            include_once("login.php"); 
         } else {
-            include_once($_GET["p"].".php"); 
+            if (!isset($_GET["p"]) || empty($_GET["p"])) {
+                include_once("acervo.php"); 
+            } else {
+                include_once($_GET["p"].".php"); 
+            }
         }
     ?>
 	
