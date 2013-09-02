@@ -15,7 +15,7 @@
     <h1>Gênero</h1>            
     <ul data-role="listview" data-inset="true" data-filter="true">
         <?php
-            $sql = "select * from genero";
+            $sql = "select * from genero order by nome";
             $result = mysql_query($sql);
             while ($genero = mysql_fetch_object($result)) {
                 echo utf8_encode("<li><a href='?p=acervo&g=$genero->gencodigo'>$genero->nome</a></li>");
@@ -43,7 +43,7 @@
         <form action="?p=reservar" method="POST" id="reservar">
             <input type="hidden" id="genero" name="genero" value="<?= $_GET['g'] ?>" />
             <?php
-            $sql = "select * from midia where genero_codigo = ". $_GET['g'];
+            $sql = "select * from midia where genero_codigo = ". $_GET['g'] . " order by titulo";
             $result = mysql_query($sql);
             while ($midia = mysql_fetch_object($result)) {
                 echo utf8_encode("
